@@ -279,61 +279,51 @@ async def health_check():
 @app.post("/api/fill-form")
 async def fill_form(form_data: SS4FormData, flatten: bool = False):
     """
-    Llena el formulario SS-4 con los datos proporcionados
-    
+    Llena el formulario SS-4 con los datos proporcionados y lo devuelve directamente
+
     - **form_data**: Datos del formulario
     - **flatten**: Si True, hace el PDF no editable (default: False)
-    
-    Retorna un enlace de descarga del PDF llenado
+
+    Retorna el PDF directamente sin almacenarlo (sin necesidad de storage)
     """
     try:
-        # Generar ID único para el archivo
-        file_id = str(uuid.uuid4())
-        output_filename = f"ss4_filled_{file_id}.pdf"
-        output_path = OUTPUT_DIR / output_filename
-        
+        # Crear archivo temporal para generar el PDF
+        with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp_pdf:
+            output_path = tmp_pdf.name
+
         # Convertir el modelo a diccionario
         data_dict = form_data.model_dump(exclude_none=False)
-        
+
         # Llenar el formulario
         success = form_service.fill_form(
             data=data_dict,
-            output_path=str(output_path),
+            output_path=output_path,
             flatten=flatten
         )
-        
+
         if not success:
+            # Limpiar archivo temporal
+            Path(output_path).unlink(missing_ok=True)
             raise HTTPException(status_code=500, detail="Error al llenar el formulario")
-        
-        return {
-            "success": True,
-            "message": "Formulario llenado exitosamente",
-            "download_url": f"/api/download/{file_id}",
-            "file_id": file_id
-        }
-        
+
+        # Generar nombre de archivo amigable con timestamp
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"SS-4_Filled_{timestamp}.pdf"
+
+        # Retornar el PDF directamente y eliminar el temporal después
+        def cleanup():
+            Path(output_path).unlink(missing_ok=True)
+
+        return FileResponse(
+            path=output_path,
+            filename=filename,
+            media_type="application/pdf",
+            background=cleanup  # Limpia el archivo después de enviarlo
+        )
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/api/download/{file_id}")
-async def download_form(file_id: str):
-    """
-    Descarga el formulario llenado
-    
-    - **file_id**: ID del archivo generado
-    """
-    output_filename = f"ss4_filled_{file_id}.pdf"
-    output_path = OUTPUT_DIR / output_filename
-    
-    if not output_path.exists():
-        raise HTTPException(status_code=404, detail="Archivo no encontrado")
-    
-    return FileResponse(
-        path=str(output_path),
-        filename=f"SS-4_Filled_{file_id[:8]}.pdf",
-        media_type="application/pdf"
-    )
 
 
 @app.get("/api/field-mapping")

@@ -7,14 +7,13 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      # Montar el template del formulario (deberás subir tu PDF aquí)
-      - ./templates:/app/templates
-      # Directorio para PDFs generados
-      - ./outputs:/app/outputs
+      # Solo necesitas montar el template del formulario
+      # Los PDFs se generan en memoria y se envían directamente al usuario
+      - ./templates:/app/templates:ro  # read-only para seguridad
     environment:
       - TEMPLATE_PATH=/app/templates/1_updated_fss4.pdf
       - MAPPING_PATH=/app/ss4_field_mapping.json
-      - OUTPUT_DIR=/app/outputs
+      # OUTPUT_DIR ya no es necesario - se usa /tmp automáticamente
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]

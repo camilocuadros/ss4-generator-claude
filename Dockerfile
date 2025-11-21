@@ -19,8 +19,8 @@ COPY ss4_form_filler_pdftk.py .
 COPY ss4_field_mapping.json .
 COPY test_api.py .
 
-# Crear directorios necesarios
-RUN mkdir -p /app/templates /app/outputs
+# Crear directorio para templates (outputs ya no se necesita - se usa /tmp)
+RUN mkdir -p /app/templates
 
 # Exponer puerto
 EXPOSE 8000
