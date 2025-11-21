@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+venv/
+env/
+ENV/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs (no necesarios en el contenedor)
+FILE_INDEX.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+
+# Node/Frontend (si es separado)
+node_modules/
+package.json
+package-lock.json
+SS4FormFiller.jsx
+
+# Outputs generados
+outputs/
+*.pdf
+!templates/*.pdf
+
+# Temporary files
+*.tmp
+*.temp
+*.log

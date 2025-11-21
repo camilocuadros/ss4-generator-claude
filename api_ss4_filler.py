@@ -14,6 +14,7 @@ import tempfile
 import json
 from pathlib import Path
 import uuid
+import os
 
 
 app = FastAPI(
@@ -242,11 +243,16 @@ trailer
             return False
 
 
-# Inicializar el servicio (ajusta las rutas según tu configuración)
-TEMPLATE_PATH = "/mnt/user-data/uploads/1_updated_fss4.pdf"
-MAPPING_PATH = "/home/claude/ss4_field_mapping.json"
-OUTPUT_DIR = Path("/tmp/ss4_outputs")
+# Configuración usando variables de entorno (compatibles con Docker y Coolify)
+TEMPLATE_PATH = os.getenv("TEMPLATE_PATH", "/app/templates/1_updated_fss4.pdf")
+MAPPING_PATH = os.getenv("MAPPING_PATH", "/app/ss4_field_mapping.json")
+OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "/app/outputs"))
 OUTPUT_DIR.mkdir(exist_ok=True)
+
+# Validar que el template existe
+if not Path(TEMPLATE_PATH).exists():
+    print(f"⚠️  WARNING: Template PDF not found at {TEMPLATE_PATH}")
+    print("   Please upload your SS-4 template PDF to the templates directory")
 
 form_service = FormFillerService(TEMPLATE_PATH, MAPPING_PATH)
 

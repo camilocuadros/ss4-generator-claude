@@ -50,6 +50,14 @@ temp/
 ss4_filled_*.pdf
 ss4_output_*.pdf
 
+# Outputs directory (keep directory structure, ignore contents)
+outputs/*
+!outputs/.gitkeep
+
+# Templates directory (ignore PDFs but keep structure)
+templates/*.pdf
+!templates/README.md
+
 # Sensitive data
 *.fdf
 credentials.json

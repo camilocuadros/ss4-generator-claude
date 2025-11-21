@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  ss4-api:
+    build: .
+    container_name: ss4-form-filler-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Montar el template del formulario (deberás subir tu PDF aquí)
+      - ./templates:/app/templates
+      # Directorio para PDFs generados
+      - ./outputs:/app/outputs
+    environment:
+      - TEMPLATE_PATH=/app/templates/1_updated_fss4.pdf
+      - MAPPING_PATH=/app/ss4_field_mapping.json
+      - OUTPUT_DIR=/app/outputs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
