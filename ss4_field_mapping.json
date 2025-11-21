@@ -1,0 +1,503 @@
+{
+  "form_info": {
+    "form_name": "SS-4",
+    "form_title": "Application for Employer Identification Number",
+    "revision": "December 2023"
+  },
+  "fields": {
+    "ein": {
+      "field_name": "topmostSubform[0].Page1[0].PgHeader[0].f1_1[0]",
+      "label": "EIN (Employer Identification Number)",
+      "type": "text",
+      "max_length": 10,
+      "format": "XX-XXXXXXX"
+    },
+    "legal_name": {
+      "field_name": "topmostSubform[0].Page1[0].f1_2[0]",
+      "label": "Line 1: Legal name of entity",
+      "type": "text",
+      "required": true
+    },
+    "trade_name": {
+      "field_name": "topmostSubform[0].Page1[0].f1_3[0]",
+      "label": "Line 2: Trade name of business",
+      "type": "text"
+    },
+    "executor_name": {
+      "field_name": "topmostSubform[0].Page1[0].f1_4[0]",
+      "label": "Line 3: Executor, administrator, trustee name",
+      "type": "text"
+    },
+    "mailing_address": {
+      "field_name": "topmostSubform[0].Page1[0].Line4ReadOrder[0].f1_5[0]",
+      "label": "Line 4a: Mailing address",
+      "type": "text"
+    },
+    "mailing_city_state_zip": {
+      "field_name": "topmostSubform[0].Page1[0].Line4ReadOrder[0].f1_6[0]",
+      "label": "Line 4b: City, state, and ZIP code",
+      "type": "text"
+    },
+    "street_address": {
+      "field_name": "topmostSubform[0].Page1[0].f1_7[0]",
+      "label": "Line 5a: Street address",
+      "type": "text"
+    },
+    "street_city_state_zip": {
+      "field_name": "topmostSubform[0].Page1[0].f1_8[0]",
+      "label": "Line 5b: City, state, and ZIP code",
+      "type": "text"
+    },
+    "county_state": {
+      "field_name": "topmostSubform[0].Page1[0].f1_9[0]",
+      "label": "Line 6: County and state where principal business is located",
+      "type": "text"
+    },
+    "responsible_party_name": {
+      "field_name": "topmostSubform[0].Page1[0].f1_10[0]",
+      "label": "Line 7a: Name of responsible party",
+      "type": "text",
+      "required": true
+    },
+    "responsible_party_ssn": {
+      "field_name": "topmostSubform[0].Page1[0].f1_11[0]",
+      "label": "Line 7b: SSN, ITIN, or EIN of responsible party",
+      "type": "text",
+      "max_length": 11,
+      "format": "XXX-XX-XXXX"
+    },
+    "is_llc_yes": {
+      "field_name": "topmostSubform[0].Page1[0].c1_1[0]",
+      "label": "Line 8a: Is this application for an LLC? - Yes",
+      "type": "checkbox",
+      "value": "1"
+    },
+    "is_llc_no": {
+      "field_name": "topmostSubform[0].Page1[0].c1_1[1]",
+      "label": "Line 8a: Is this application for an LLC? - No",
+      "type": "checkbox",
+      "value": "2"
+    },
+    "llc_members": {
+      "field_name": "topmostSubform[0].Page1[0].f1_12[0]",
+      "label": "Line 8b: Number of LLC members",
+      "type": "text"
+    },
+    "llc_in_us_yes": {
+      "field_name": "topmostSubform[0].Page1[0].c1_2[0]",
+      "label": "Line 8c: Was the LLC organized in the US? - Yes",
+      "type": "checkbox",
+      "value": "1"
+    },
+    "llc_in_us_no": {
+      "field_name": "topmostSubform[0].Page1[0].c1_2[1]",
+      "label": "Line 8c: Was the LLC organized in the US? - No",
+      "type": "checkbox",
+      "value": "2"
+    },
+    "entity_type": {
+      "sole_proprietor": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[0]",
+        "label": "Line 9a: Sole proprietor",
+        "type": "checkbox",
+        "value": "1"
+      },
+      "partnership": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[1]",
+        "label": "Line 9a: Partnership",
+        "type": "checkbox",
+        "value": "8"
+      },
+      "corporation": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[2]",
+        "label": "Line 9a: Corporation",
+        "type": "checkbox",
+        "value": "2"
+      },
+      "personal_service_corp": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[3]",
+        "label": "Line 9a: Personal service corporation",
+        "type": "checkbox",
+        "value": "9"
+      },
+      "church": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[4]",
+        "label": "Line 9a: Church or church-controlled organization",
+        "type": "checkbox",
+        "value": "3"
+      },
+      "other_nonprofit": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[5]",
+        "label": "Line 9a: Other nonprofit organization",
+        "type": "checkbox",
+        "value": "10"
+      },
+      "other": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[6]",
+        "label": "Line 9a: Other",
+        "type": "checkbox",
+        "value": "4"
+      },
+      "estate": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[7]",
+        "label": "Line 9a: Estate",
+        "type": "checkbox",
+        "value": "11"
+      },
+      "plan_administrator": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[8]",
+        "label": "Line 9a: Plan administrator",
+        "type": "checkbox",
+        "value": "14"
+      },
+      "trust": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[9]",
+        "label": "Line 9a: Trust",
+        "type": "checkbox",
+        "value": "5"
+      },
+      "military": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[10]",
+        "label": "Line 9a: Military/National Guard",
+        "type": "checkbox",
+        "value": "12"
+      },
+      "state_local_gov": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[11]",
+        "label": "Line 9a: State/local government",
+        "type": "checkbox",
+        "value": "15"
+      },
+      "farmers_coop": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[12]",
+        "label": "Line 9a: Farmers' cooperative",
+        "type": "checkbox",
+        "value": "6"
+      },
+      "remic": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[13]",
+        "label": "Line 9a: REMIC",
+        "type": "checkbox",
+        "value": "13"
+      },
+      "federal_gov": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[14]",
+        "label": "Line 9a: Federal government",
+        "type": "checkbox",
+        "value": "16"
+      },
+      "indian_tribal": {
+        "field_name": "topmostSubform[0].Page1[0].c1_3[15]",
+        "label": "Line 9a: Indian tribal governments/enterprises",
+        "type": "checkbox",
+        "value": "7"
+      }
+    },
+    "corporation_form_number": {
+      "field_name": "topmostSubform[0].Page1[0].f1_13[0]",
+      "label": "Line 9a: Corporation form number to be filed",
+      "type": "text",
+      "max_length": 11
+    },
+    "trust_tin": {
+      "field_name": "topmostSubform[0].Page1[0].f1_14[0]",
+      "label": "Line 9a: Trust TIN of grantor",
+      "type": "text",
+      "max_length": 11
+    },
+    "plan_admin_tin": {
+      "field_name": "topmostSubform[0].Page1[0].f1_15[0]",
+      "label": "Line 9a: Plan administrator TIN",
+      "type": "text",
+      "max_length": 11
+    },
+    "other_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_16[0]",
+      "label": "Line 9a: Other (specify)",
+      "type": "text"
+    },
+    "nonprofit_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_17[0]",
+      "label": "Line 9a: Other nonprofit organization (specify)",
+      "type": "text",
+      "max_length": 11
+    },
+    "group_exemption_number": {
+      "field_name": "topmostSubform[0].Page1[0].f1_18[0]",
+      "label": "Line 9a: Group Exemption Number (GEN)",
+      "type": "text"
+    },
+    "state_incorporated": {
+      "field_name": "topmostSubform[0].Page1[0].f1_19[0]",
+      "label": "Line 9b: State where incorporated",
+      "type": "text"
+    },
+    "foreign_country": {
+      "field_name": "topmostSubform[0].Page1[0].f1_20[0]",
+      "label": "Line 9b: Foreign country where incorporated",
+      "type": "text"
+    },
+    "reason_for_applying": {
+      "started_new_business": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[0]",
+        "label": "Line 10: Started new business",
+        "type": "checkbox",
+        "value": "5"
+      },
+      "hired_employees": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[1]",
+        "label": "Line 10: Hired employees",
+        "type": "checkbox",
+        "value": "1"
+      },
+      "compliance_withholding": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[2]",
+        "label": "Line 10: Compliance with IRS withholding regulations",
+        "type": "checkbox",
+        "value": "6"
+      },
+      "banking_purpose": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[3]",
+        "label": "Line 10: Banking purpose",
+        "type": "checkbox",
+        "value": "7"
+      },
+      "changed_org_type": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[4]",
+        "label": "Line 10: Changed type of organization",
+        "type": "checkbox",
+        "value": "2"
+      },
+      "purchased_business": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[5]",
+        "label": "Line 10: Purchased going business",
+        "type": "checkbox",
+        "value": "8"
+      },
+      "created_trust": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[6]",
+        "label": "Line 10: Created a trust",
+        "type": "checkbox",
+        "value": "3"
+      },
+      "created_pension": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[7]",
+        "label": "Line 10: Created a pension plan",
+        "type": "checkbox",
+        "value": "9"
+      },
+      "other_reason": {
+        "field_name": "topmostSubform[0].Page1[0].c1_4[8]",
+        "label": "Line 10: Other",
+        "type": "checkbox",
+        "value": "4"
+      }
+    },
+    "business_type_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_24[0]",
+      "label": "Line 10: Started new business - specify type",
+      "type": "text"
+    },
+    "new_org_type": {
+      "field_name": "topmostSubform[0].Page1[0].f1_25[0]",
+      "label": "Line 10: Changed type of organization - specify new type",
+      "type": "text"
+    },
+    "trust_type": {
+      "field_name": "topmostSubform[0].Page1[0].f1_26[0]",
+      "label": "Line 10: Created a trust - specify type",
+      "type": "text"
+    },
+    "banking_purpose_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_27[0]",
+      "label": "Line 10: Banking purpose - specify",
+      "type": "text"
+    },
+    "pension_type": {
+      "field_name": "topmostSubform[0].Page1[0].f1_28[0]",
+      "label": "Line 10: Created a pension plan - specify type",
+      "type": "text"
+    },
+    "other_reason_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_29[0]",
+      "label": "Line 10: Other - specify",
+      "type": "text"
+    },
+    "date_started": {
+      "field_name": "topmostSubform[0].Page1[0].f1_30[0]",
+      "label": "Line 11: Date business started or acquired",
+      "type": "text"
+    },
+    "closing_month": {
+      "field_name": "topmostSubform[0].Page1[0].f1_31[0]",
+      "label": "Line 12: Closing month of accounting year",
+      "type": "text"
+    },
+    "employees_agricultural": {
+      "field_name": "topmostSubform[0].Page1[0].f1_32[0]",
+      "label": "Line 13: Highest number of employees expected - Agricultural",
+      "type": "text"
+    },
+    "employees_household": {
+      "field_name": "topmostSubform[0].Page1[0].f1_33[0]",
+      "label": "Line 13: Highest number of employees expected - Household",
+      "type": "text"
+    },
+    "employees_other": {
+      "field_name": "topmostSubform[0].Page1[0].f1_34[0]",
+      "label": "Line 13: Highest number of employees expected - Other",
+      "type": "text"
+    },
+    "file_form_944": {
+      "field_name": "topmostSubform[0].Page1[0].c1_5[0]",
+      "label": "Line 14: Want to file Form 944 annually",
+      "type": "checkbox",
+      "value": "1"
+    },
+    "first_wages_date": {
+      "field_name": "topmostSubform[0].Page1[0].f1_35[0]",
+      "label": "Line 15: First date wages or annuities were paid",
+      "type": "text"
+    },
+    "principal_activity": {
+      "construction": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[0]",
+        "label": "Line 16: Construction",
+        "type": "checkbox",
+        "value": "7"
+      },
+      "real_estate": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[1]",
+        "label": "Line 16: Real estate",
+        "type": "checkbox",
+        "value": "10"
+      },
+      "rental_leasing": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[2]",
+        "label": "Line 16: Rental & leasing",
+        "type": "checkbox",
+        "value": "1"
+      },
+      "manufacturing": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[3]",
+        "label": "Line 16: Manufacturing",
+        "type": "checkbox",
+        "value": "3"
+      },
+      "finance_insurance": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[4]",
+        "label": "Line 16: Finance & insurance",
+        "type": "checkbox",
+        "value": "5"
+      },
+      "health_care": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[5]",
+        "label": "Line 16: Health care & social assistance",
+        "type": "checkbox",
+        "value": "8"
+      },
+      "accommodation_food": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[6]",
+        "label": "Line 16: Accommodation & food service",
+        "type": "checkbox",
+        "value": "11"
+      },
+      "wholesale_agent": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[7]",
+        "label": "Line 16: Wholesale—agent/broker",
+        "type": "checkbox",
+        "value": "12"
+      },
+      "transportation": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[8]",
+        "label": "Line 16: Transportation & warehousing",
+        "type": "checkbox",
+        "value": "2"
+      },
+      "wholesale_other": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[9]",
+        "label": "Line 16: Wholesale—other",
+        "type": "checkbox",
+        "value": "4"
+      },
+      "retail": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[10]",
+        "label": "Line 16: Retail",
+        "type": "checkbox",
+        "value": "6"
+      },
+      "other_activity": {
+        "field_name": "topmostSubform[0].Page1[0].c1_6[11]",
+        "label": "Line 16: Other",
+        "type": "checkbox",
+        "value": "9"
+      }
+    },
+    "other_activity_specify": {
+      "field_name": "topmostSubform[0].Page1[0].f1_36[0]",
+      "label": "Line 16: Other - specify",
+      "type": "text"
+    },
+    "principal_line": {
+      "field_name": "topmostSubform[0].Page1[0].f1_37[0]",
+      "label": "Line 17: Principal line of merchandise/services",
+      "type": "text"
+    },
+    "previous_ein_applied": {
+      "yes": {
+        "field_name": "topmostSubform[0].Page1[0].c1_7[0]",
+        "label": "Line 18: Has applicant ever applied for EIN? - Yes",
+        "type": "checkbox",
+        "value": "1"
+      },
+      "no": {
+        "field_name": "topmostSubform[0].Page1[0].c1_7[1]",
+        "label": "Line 18: Has applicant ever applied for EIN? - No",
+        "type": "checkbox",
+        "value": "2"
+      }
+    },
+    "previous_ein": {
+      "field_name": "topmostSubform[0].Page1[0].f1_39[0]",
+      "label": "Line 18: Previous EIN",
+      "type": "text",
+      "max_length": 10,
+      "format": "XX-XXXXXXX"
+    },
+    "designee_name": {
+      "field_name": "topmostSubform[0].Page1[0].f1_40[0]",
+      "label": "Third Party Designee: Name",
+      "type": "text"
+    },
+    "designee_phone": {
+      "field_name": "topmostSubform[0].Page1[0].f1_41[0]",
+      "label": "Third Party Designee: Telephone number",
+      "type": "text"
+    },
+    "designee_address": {
+      "field_name": "topmostSubform[0].Page1[0].f1_42[0]",
+      "label": "Third Party Designee: Address and ZIP code",
+      "type": "text"
+    },
+    "designee_fax": {
+      "field_name": "topmostSubform[0].Page1[0].f1_43[0]",
+      "label": "Third Party Designee: Fax number",
+      "type": "text"
+    },
+    "signature_name_title": {
+      "field_name": "topmostSubform[0].Page1[0].f1_44[0]",
+      "label": "Signature: Name and title",
+      "type": "text"
+    },
+    "applicant_phone": {
+      "field_name": "topmostSubform[0].Page1[0].f1_45[0]",
+      "label": "Applicant's telephone number",
+      "type": "text"
+    },
+    "applicant_fax": {
+      "field_name": "topmostSubform[0].Page1[0].f1_46[0]",
+      "label": "Applicant's fax number",
+      "type": "text"
+    }
+  }
+}
